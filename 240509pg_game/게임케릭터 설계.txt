@@ -1,0 +1,51 @@
+Character 클래스()
+- 변수 : x, y, hp, mp, range, speed
+- 함수 : void attack(Character*), bool hpFull(), bool mpFull(), void hpMax(), void mpMax(),  
+           void move(x, y), void punch(Character*) 
+ > attack : 각 클래스별 특별한 공격수행 (순수가상함수)
+ > hpFull : 각 클래스별로 hp가 최대치이상인지 검사 (순수가상함수)
+ > mpFull : 각 클래스별로 mp가 최대치이상인지 검사 (순수가상함수)
+ > hpMax : 각 클래스별로 hp를 최대치로 변경 (순수가상함수)
+ > mpMax : 각 클래스별로 mp를 최대치로 변경  (순수가상함수)
+ > move : 지정된 위치로 이동(한번움직일때마다 speed만큼 이동)
+ > punch : 사거리1 이내에 있는 선택된 캐릭터를 1만큼 공격
+
+SwordsMan 클래스(hp:80, mp:0, range:2, speed:0.1)
+- 함수 : void attack(Character*), void run(x, y)
+ > attack : 사거리내의 선택된 캐릭터를 공격(10만큼)
+ > run : 지정된 위치로 이동
+(hp를 5만큼 감소시켜 달리는동안만 speed를 0.5로 증가, 단 hp가 20이하이면 사용불가능) 
+
+
+Wizard 클래스(hp:30, mp:80, range:5,  speed:0.1)
+- 함수 : attack(Character*), teleport(x, y), mpcharge()
+ > attack : 사거리내의 선택된 캐릭터를 마법공격(5만큼), mp를 5만큼 감소(mp가 5이상일 때만 사용가능)
+ > teleport : 한번에 특정 장소로 이동
+ > mpcharge : hp을 5감소시켜 mp를 20회복
+
+Archer 클래스(hp:40, arrows:5 range:10,  speed:0.2)
+- 변수 : arrows(화살수)
+- 함수 : attack(Character*), reload()
+ > attack : 화살 1개 감소하여, 사거리내의 선택된 캐릭터를 공격(5만큼) (화살이 1개이상있을때만 사용가능)
+ > reload : 화살 2개 증가(최대5개만 보유할수있음)
+
+priest 클래스(hp:60, mp:80, range:5, speed:0.1)
+- 함수 : attack(Character*), hpHeal(Character*), mpHeal(Character*), mpcharge()
+ > attack : punch와 동일
+ > hpHeal : mp를 5감소시켜 사거리내의 선택된 캐릭터의 hp를 10상승(mp가 5이상일 때만 사용가능)
+ > mpHeal : mp를 5감소시켜 사거리내의 선택된 캐릭터의 mp를 10상승(mp가 5이상일 때만 사용가능) 
+ > mpcharge : hp을 5감소시켜 mp를 20회복 
+
+Assassin 클래스(hp:50, energy:20, range:1, speed:0.5)
+- 함수 : attack(Character*), void ambush()
+ > attack : 사거리내의 선택된 캐릭터를 공격(5만큼)
+            만약 ambush 사용 후 공격하는 경우라면 20만큼 공격
+ > ambush : energy를 15감소시켜 공격받지 않는 잠복상태가 됨(모든 캐릭터의 사거리를 벗어남)
+            만약 공격 후 라면 잠복상태가 풀림(원래 위치로 돌아옴)
+
+
+
+
+
+
+

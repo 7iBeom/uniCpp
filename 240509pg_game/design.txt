@@ -1,0 +1,19 @@
+Character 클래스()
+- 변수 : x, y, hp, mp, range, speed
+- 함수 : void attack(Character*), bool hpFull(), bool mpFull(), void hpMax(), void mpMax(),  
+           void move(x, y), void punch(Character*) 
+ > attack : 각 클래스별 특별한 공격수행 (순수가상함수)
+ > hpFull : 각 클래스별로 hp가 최대치이상인지 검사 (순수가상함수)
+ > mpFull : 각 클래스별로 mp가 최대치이상인지 검사 (순수가상함수)
+ > hpMax : 각 클래스별로 hp를 최대치로 변경 (순수가상함수)
+ > mpMax : 각 클래스별로 mp를 최대치로 변경  (순수가상함수)
+ > move : 지정된 위치로 이동(한번움직일때마다 speed만큼 이동)
+ > punch : 사거리1 이내에 있는 선택된 캐릭터를 1만큼 공격
+
+ Assassin 클래스(hp:50, energy(mana):20, range:1, speed:0.5)
+- 함수 : attack(Character*), void ambush()
+ > attack : 사거리내의 선택된 캐릭터를 공격(5만큼)
+            만약 ambush 사용 후 공격하는 경우라면 20만큼 공격
+ > ambush : energy를 15감소시켜 공격받지 않는 잠복상태가 됨(모든 캐릭터의 사거리를 벗어남)
+            만약 공격 후 라면 잠복상태가 풀림(원래 위치로 돌아옴)
+ > energyRecovery : energy를 10 회복
